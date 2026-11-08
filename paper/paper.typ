@@ -1,6 +1,6 @@
 #import "numbers.typ": *
 
-#set document(title: "Gradient-Free Weight Editing Reduces Overthinking in Qwen3.8-27B", author: ("Justin Bennington", "Nikki Kaelar", "Spencer Lee", "Mitchell Edwards"))
+#set document(title: "Gradient-Free Weight Editing Reduces Overthinking in Qwen3.8-27B", author: ("Justin Bennington", "Nikki Kaelar", "Spencer Lee", "Mitchell Edwards", "Kojin Glick"))
 #set page(paper: "us-letter", margin: (x: 1in, y: 0.9in), numbering: "1",
   header: context { if counter(page).get().first() > 1 [#set text(8pt, fill: luma(110)); Bennington · Gradient-Free Weight Editing in Qwen3.8-27B · Working paper v1 #h(1fr) Concept Country] })
 #set text(font: ("Libertinus Serif", "New Computer Modern"), size: 10.5pt, lang: "en")
@@ -22,7 +22,7 @@
   #v(0.15em)
   #text(11pt)[A norm-matched controlled replication of weight-space programming]
   #v(0.6em)
-  Justin Bennington · Nikki Kaelar · Spencer Lee · Mitchell Edwards \
+  Justin Bennington · Nikki Kaelar · Spencer Lee · Mitchell Edwards · Kojin Glick \
   #text(9.5pt)[Concept Country, New York, NY · Working paper v1, 8 November 2026]
 ]
 
