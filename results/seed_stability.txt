@@ -1,0 +1,18 @@
+=== seed stability: IFBench control -> edit, accuracy CI lower bound ===
+  seed         1: [+0.33, +9.00]
+  seed         7: [+0.33, +9.33]
+  seed        42: [+0.00, +9.00]   <-- crosses 0
+  seed       100: [+0.00, +9.33]   <-- crosses 0
+  seed      2026: [+0.33, +9.33]
+  seed  20261107: [+0.33, +9.33]
+  seed    999983: [+0.33, +9.33]
+  seed    123456: [+0.33, +9.33]
+  seed     31337: [+0.33, +9.00]
+  seed     88888: [+0.33, +9.33]
+  lower bound range: +0.00 .. +0.33
+  seeds where the CI includes 0: 2 of 10
+  VERDICT: seed-sensitive -> must be reported as borderline, not a win
+
+=== for contrast: the two clauses the PASS rests on ===
+  GPQA  ctrl->edit lower bound across 5 seeds: +2.78 .. +2.78  (STABLE above 0)
+  LCB   ctrl->edit lower bound across 5 seeds: +3.05 .. +3.82  (STABLE above 0)

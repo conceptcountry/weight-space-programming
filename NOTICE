@@ -1,0 +1,13 @@
+Weight-Space Programming
+Copyright 2026 Concept Country
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+The subject model is Qwen3.8-27B, Copyright Alibaba Cloud, licensed under
+the Apache License, Version 2.0. This repository contains no model weights;
+it contains the analysis code and the evaluation artifacts the paper's
+numbers are derived from.
+
+Evaluation ran on Actual Computer (https://actual.inc), which is of
+llama.cpp lineage. llama.cpp is Copyright Georgi Gerganov and contributors,
+MIT licensed.

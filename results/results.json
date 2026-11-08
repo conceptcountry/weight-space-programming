@@ -1,0 +1,454 @@
+{
+  "benchmarks": {
+    "gpqa_diamond": {
+      "acc": {
+        "Bcc_0.1": 86.11,
+        "Rcc_0.1": 80.81,
+        "base": 81.82
+      },
+      "label": "GPQA Diamond",
+      "n_ids": 198,
+      "paired": {
+        "base_to_ctrl": {
+          "a": 81.82,
+          "b": 80.81,
+          "better": 7,
+          "ci": [
+            -3.28,
+            1.26
+          ],
+          "delta": -1.01,
+          "n": 198,
+          "same": 180,
+          "worse": 11
+        },
+        "base_to_edit": {
+          "a": 81.82,
+          "b": 86.11,
+          "better": 20,
+          "ci": [
+            1.77,
+            7.07
+          ],
+          "delta": 4.29,
+          "n": 198,
+          "same": 173,
+          "worse": 5
+        },
+        "ctrl_to_edit": {
+          "a": 80.81,
+          "b": 86.11,
+          "better": 22,
+          "ci": [
+            2.78,
+            8.08
+          ],
+          "delta": 5.3,
+          "n": 198,
+          "same": 173,
+          "worse": 3
+        }
+      },
+      "provenance_graded": {
+        "Bcc_0.1": {
+          "ids": 198,
+          "path": "results/g_Bcc_0.1_gpqa_diamond.json",
+          "sha12": "352e346f1d8b"
+        },
+        "Rcc_0.1": {
+          "ids": 198,
+          "path": "results/g_Rcc_0.1_gpqa_diamond.json",
+          "sha12": "5166cd6bfb1f"
+        },
+        "base": {
+          "ids": 198,
+          "path": "results/g_base_gpqa_diamond.json",
+          "sha12": "07618538dea1"
+        }
+      },
+      "provenance_raw": {
+        "Bcc_0.1": {
+          "path": "results/aC_Bcc_0.1_gpqa_diamond.jsonl",
+          "rows": 396,
+          "sha12": "1465a1260b1b"
+        },
+        "Rcc_0.1": {
+          "path": "results/s4/aC_Rcc_0.1_gpqa_diamond.jsonl",
+          "rows": 396,
+          "sha12": "58ab9caf7074"
+        },
+        "base": {
+          "path": "results/s4/aC_base_gpqa_diamond.jsonl",
+          "rows": 396,
+          "sha12": "24cf5793dcd0"
+        }
+      },
+      "tokens": {
+        "base_to_ctrl": {
+          "a": 11955.1,
+          "b": 11981.0,
+          "ci": [
+            -3.6,
+            4.1
+          ],
+          "n": 198,
+          "pct": 0.2,
+          "trunc_a": 60,
+          "trunc_b": 58
+        },
+        "base_to_edit": {
+          "a": 11955.1,
+          "b": 8372.7,
+          "ci": [
+            -35.5,
+            -24.6
+          ],
+          "n": 198,
+          "pct": -30.0,
+          "trunc_a": 60,
+          "trunc_b": 35
+        },
+        "ctrl_to_edit": {
+          "a": 11981.0,
+          "b": 8372.7,
+          "ci": [
+            -36.1,
+            -24.4
+          ],
+          "n": 198,
+          "pct": -30.1,
+          "trunc_a": 58,
+          "trunc_b": 35
+        },
+        "mean": {
+          "Bcc_0.1": 8372.7,
+          "Rcc_0.1": 11981.0,
+          "base": 11955.1
+        },
+        "trunc": {
+          "Bcc_0.1": 35,
+          "Rcc_0.1": 58,
+          "base": 60
+        }
+      }
+    },
+    "ifbench": {
+      "acc": {
+        "Bcc_0.1": 82.67,
+        "Rcc_0.1": 78.0,
+        "base": 79.33
+      },
+      "label": "IFBench",
+      "n_ids": 300,
+      "paired": {
+        "base_to_ctrl": {
+          "a": 79.33,
+          "b": 78.0,
+          "better": 23,
+          "ci": [
+            -6.0,
+            3.33
+          ],
+          "delta": -1.33,
+          "n": 300,
+          "same": 250,
+          "worse": 27
+        },
+        "base_to_edit": {
+          "a": 79.33,
+          "b": 82.67,
+          "better": 29,
+          "ci": [
+            -1.0,
+            7.67
+          ],
+          "delta": 3.33,
+          "n": 300,
+          "same": 252,
+          "worse": 19
+        },
+        "ctrl_to_edit": {
+          "a": 78.0,
+          "b": 82.67,
+          "better": 31,
+          "ci": [
+            0.33,
+            9.33
+          ],
+          "delta": 4.67,
+          "n": 300,
+          "same": 252,
+          "worse": 17
+        }
+      },
+      "provenance_graded": {
+        "Bcc_0.1": {
+          "ids": 300,
+          "path": "results/g_Bcc_0.1_ifbench.json",
+          "sha12": "80d94e5ece5d"
+        },
+        "Rcc_0.1": {
+          "ids": 300,
+          "path": "results/g_Rcc_0.1_ifbench.json",
+          "sha12": "dd03fdde5c4e"
+        },
+        "base": {
+          "ids": 300,
+          "path": "results/g_base_ifbench.json",
+          "sha12": "4733519a2881"
+        }
+      },
+      "provenance_raw": {
+        "Bcc_0.1": {
+          "path": "results/aC_Bcc_0.1_ifbench.jsonl",
+          "rows": 300,
+          "sha12": "7add1bed3fd8"
+        },
+        "Rcc_0.1": {
+          "path": "results/aC_Rcc_0.1_ifbench.jsonl",
+          "rows": 300,
+          "sha12": "0c7be3b5f0d3"
+        },
+        "base": {
+          "path": "results/s4/aC_base_ifbench.jsonl",
+          "rows": 300,
+          "sha12": "ba5f47d2b871"
+        }
+      },
+      "tokens": {
+        "base_to_ctrl": {
+          "a": 7858.1,
+          "b": 7848.0,
+          "ci": [
+            -8.5,
+            8.4
+          ],
+          "n": 300,
+          "pct": -0.1,
+          "trunc_a": 12,
+          "trunc_b": 12
+        },
+        "base_to_edit": {
+          "a": 7858.1,
+          "b": 3606.8,
+          "ci": [
+            -62.9,
+            -45.6
+          ],
+          "n": 300,
+          "pct": -54.1,
+          "trunc_a": 12,
+          "trunc_b": 1
+        },
+        "ctrl_to_edit": {
+          "a": 7848.0,
+          "b": 3606.8,
+          "ci": [
+            -63.0,
+            -45.6
+          ],
+          "n": 300,
+          "pct": -54.0,
+          "trunc_a": 12,
+          "trunc_b": 1
+        },
+        "mean": {
+          "Bcc_0.1": 3606.8,
+          "Rcc_0.1": 7848.0,
+          "base": 7858.1
+        },
+        "trunc": {
+          "Bcc_0.1": 1,
+          "Rcc_0.1": 12,
+          "base": 12
+        }
+      }
+    },
+    "lcb_v6": {
+      "acc": {
+        "Bcc_0.1": 70.99,
+        "Rcc_0.1": 61.07,
+        "base": 58.02
+      },
+      "label": "LiveCodeBench v6",
+      "n_ids": 131,
+      "paired": {
+        "base_to_ctrl": {
+          "a": 58.02,
+          "b": 61.07,
+          "better": 12,
+          "ci": [
+            -3.82,
+            9.92
+          ],
+          "delta": 3.05,
+          "n": 131,
+          "same": 111,
+          "worse": 8
+        },
+        "base_to_edit": {
+          "a": 58.02,
+          "b": 70.99,
+          "better": 22,
+          "ci": [
+            6.11,
+            20.61
+          ],
+          "delta": 12.98,
+          "n": 131,
+          "same": 104,
+          "worse": 5
+        },
+        "ctrl_to_edit": {
+          "a": 61.07,
+          "b": 70.99,
+          "better": 17,
+          "ci": [
+            3.82,
+            16.79
+          ],
+          "delta": 9.92,
+          "n": 131,
+          "same": 110,
+          "worse": 4
+        }
+      },
+      "provenance_graded": {
+        "Bcc_0.1": {
+          "ids": 131,
+          "path": "results/g_Bcc_0.1_lcb_v6.json",
+          "sha12": "2b613be606eb"
+        },
+        "Rcc_0.1": {
+          "ids": 131,
+          "path": "results/g_Rcc_0.1_lcb_v6.json",
+          "sha12": "5bdb4337bf4c"
+        },
+        "base": {
+          "ids": 131,
+          "path": "results/g_base_lcb_v6.json",
+          "sha12": "629923c00383"
+        }
+      },
+      "provenance_raw": {
+        "Bcc_0.1": {
+          "path": "results/aC_Bcc_0.1_lcb_v6.jsonl",
+          "rows": 131,
+          "sha12": "14ecd61b7695"
+        },
+        "Rcc_0.1": {
+          "path": "results/aC_Rcc_0.1_lcb_v6.jsonl",
+          "rows": 131,
+          "sha12": "aafd3c7a0b62"
+        },
+        "base": {
+          "path": "results/s4/aC_base_lcb_v6.jsonl",
+          "rows": 131,
+          "sha12": "9124ee1ca99d"
+        }
+      },
+      "tokens": {
+        "base_to_ctrl": {
+          "a": 16816.6,
+          "b": 16373.5,
+          "ci": [
+            -7.8,
+            2.0
+          ],
+          "n": 131,
+          "pct": -2.6,
+          "trunc_a": 42,
+          "trunc_b": 42
+        },
+        "base_to_edit": {
+          "a": 16816.6,
+          "b": 11913.6,
+          "ci": [
+            -36.2,
+            -22.6
+          ],
+          "n": 131,
+          "pct": -29.2,
+          "trunc_a": 42,
+          "trunc_b": 20
+        },
+        "ctrl_to_edit": {
+          "a": 16373.5,
+          "b": 11913.6,
+          "ci": [
+            -33.9,
+            -20.8
+          ],
+          "n": 131,
+          "pct": -27.2,
+          "trunc_a": 42,
+          "trunc_b": 20
+        },
+        "mean": {
+          "Bcc_0.1": 11913.6,
+          "Rcc_0.1": 16373.5,
+          "base": 16816.6
+        },
+        "trunc": {
+          "Bcc_0.1": 20,
+          "Rcc_0.1": 42,
+          "base": 42
+        }
+      }
+    }
+  },
+  "bootstrap_reps": 10000,
+  "bootstrap_seed": 20261107,
+  "census": {
+    "Bcc_0.1": {
+      "rows_filtered": 396,
+      "rows_unfiltered": 792,
+      "sample_counts_filtered": {
+        "2": 198
+      },
+      "sample_counts_unfiltered": {
+        "4": 198
+      }
+    },
+    "Rcc_0.1": {
+      "rows_filtered": 396,
+      "rows_unfiltered": 396,
+      "sample_counts_filtered": {
+        "2": 198
+      },
+      "sample_counts_unfiltered": {
+        "2": 198
+      }
+    },
+    "base": {
+      "rows_filtered": 396,
+      "rows_unfiltered": 406,
+      "sample_counts_filtered": {
+        "2": 198
+      },
+      "sample_counts_unfiltered": {
+        "2": 192,
+        "3": 2,
+        "4": 4
+      }
+    }
+  },
+  "generated_utc": "2026-11-08T02:24:48Z",
+  "gpqa_samples_filter": [
+    0,
+    1
+  ],
+  "provenance": {},
+  "seed_stability": {
+    "gpqa_ctrl_to_edit_lower_bound_stable": true,
+    "ifbench_ctrl_to_edit_lower_bound_range": [
+      0.0,
+      0.33
+    ],
+    "ifbench_seeds_including_zero": 2,
+    "ifbench_seeds_tested": 10,
+    "lcb_ctrl_to_edit_lower_bound_stable": true,
+    "note": "IFBench control->edit accuracy CI lower bound is seed-sensitive; lands on +0.00 for 2 of 10 seeds. Reported as borderline, not claimed. GPQA and LCB control margins are seed-stable above 0."
+  },
+  "token_ci_method": "Paired bootstrap of per-problem differences over a fixed baseline mean, matching scripts/paired.py (the method behind every published token figure)."
+}
