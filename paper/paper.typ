@@ -349,9 +349,20 @@ on the token clause. The IFBench control clause is reported as borderline and no
 
 *Data and code.* The edit and control specifications, the direction tensors, every graded
 result file with its digest, the generating script and its per-arm sample census, and the
-seed-stability sweep are published with this paper. `emit_results.py` recomputes every
+seed-stability sweep are published with this paper at
+#link("https://github.com/conceptcountry/weight-space-programming")[github.com/conceptcountry/weight-space-programming],
+Apache-2.0. `emit_results.py` recomputes every
 statistic from the graded artifacts and `emit_numbers.py` regenerates the figures quoted in
 this text, so no number here is transcribed by hand.
+
+*Model availability.* The edited model is published as `conceptcountry/qwen-concept-27b` on
+#link("https://models.concept.country")[models.concept.country] and on
+#link("https://huggingface.co/conceptcountry")[HuggingFace], in bf16 alongside FP8,
+NVFP4A16, and Q8_0 and Q4_K_M GGUF conversions. The Q8_0 file is the one every benchmark in
+this paper ran on, published as-is rather than reconverted. The quantizations are
+conveniences for deployment, not separately evaluated artifacts: every number reported here
+is from bf16 weights served at Q8_0, and no claim is made that a 4-bit conversion preserves
+the effect. The model is experimental and under evaluation.
 
 *Acknowledgements.* The replication was proposed by the author. The analysis, figures and
 text are the author's, carried out with an AI coding agent under his direction.

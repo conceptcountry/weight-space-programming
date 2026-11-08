@@ -50,10 +50,38 @@ are seed-stable, and the verdict rests on those.
 
 This is the kind of thing a replication is for.
 
+## Weights
+
+Published as `conceptcountry/qwen-concept-27b`, on both
+[models.concept.country](https://models.concept.country) and
+[HuggingFace](https://huggingface.co/conceptcountry).
+
+| format | size | what it is for |
+|---|---|---|
+| bf16 | ~52 GB | full precision; the weights every result was computed from |
+| FP8 | ~30 GB | FP8_BLOCK, matching Qwen's own FP8 layout |
+| NVFP4A16 | ~20 GB | NVFP4 weights, BF16 activations, for Blackwell-class hardware |
+| Q8_0 GGUF | ~27 GB | llama.cpp; the exact file the benchmarks ran on |
+| Q4_K_M GGUF | ~16 GB | llama.cpp, one hop from bf16 |
+
+The registry speaks the HuggingFace Hub API, so either source works with
+standard tooling:
+
+```sh
+HF_ENDPOINT=https://models.concept.country hf download conceptcountry/qwen-concept-27b
+```
+
+The quantizations are deployment conveniences, not separately evaluated
+artifacts. Every number in the paper comes from bf16 weights served at Q8_0.
+Nothing here claims a 4-bit conversion preserves the effect — that would need
+its own evaluation, and has not had one.
+
+Experimental, under evaluation.
+
 ## What is not here
 
-No model weights. The subject model is Qwen3.8-27B (Apache-2.0, Alibaba Cloud);
-the edit is described in the paper in enough detail to reproduce.
+No model weights in this repository. The weights live in the registry and on HuggingFace, linked above. The base
+model is Qwen3.8-27B (Apache-2.0, Alibaba Cloud).
 
 ## License
 
