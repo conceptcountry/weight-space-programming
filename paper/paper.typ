@@ -1,6 +1,6 @@
 #import "numbers.typ": *
 
-#set document(title: "Gradient-Free Weight Editing Reduces Overthinking in Qwen3.8-27B", author: ("Justin Bennington", "Nikki Kaelar", "Spencer Lee", "Mitchell Edwards", "Kojin Glick"))
+#set document(title: "Gradient-Free Weight Editing Reduces Overthinking in Qwen3.8-27B", author: ("Justin Bennington", "Nikki Kaelar", "Spencer Lee", "Mitchell Edwards", "Kojin Glick", "Cilvia Danks"))
 #set page(paper: "us-letter", margin: (x: 1in, y: 0.9in), numbering: "1",
   header: context { if counter(page).get().first() > 1 [#set text(8pt, fill: luma(110)); Bennington · Gradient-Free Weight Editing in Qwen3.8-27B · Working paper v1 #h(1fr) Concept Country] })
 #set text(font: ("Libertinus Serif", "New Computer Modern"), size: 10.5pt, lang: "en")
@@ -22,7 +22,7 @@
   #v(0.15em)
   #text(11pt)[A norm-matched controlled replication of weight-space programming]
   #v(0.6em)
-  Justin Bennington · Nikki Kaelar · Spencer Lee · Mitchell Edwards · Kojin Glick \
+  Justin Bennington · Nikki Kaelar · Spencer Lee · Mitchell Edwards · Kojin Glick · Cilvia Danks \
   #text(9.5pt)[Concept Country, New York, NY · Working paper v1, 8 November 2026]
 ]
 
@@ -46,10 +46,10 @@ any benchmark (#gtokpctbc%, #iftokpctbc%, #lcbtokpctbc%). Against that control t
 #gdce pts on GPQA (#gcice) and #lcbdce on LCB (#lcbcice). We report one clause as
 borderline rather than passing: the IFBench control margin's lower bound sits on zero and
 moves with the bootstrap seed, so we decline to claim it. We also document a measurement
-hazard that bit three separate analysis scripts in this study — a follow-up sampling run
-appending extra samples to the same result files, silently mixing #censeditunf#[-row] and
-#censbasefil#[-row] problem sets in a per-problem mean — and the recomputation discipline that
-caught it each time.
+hazard that bit three separate analysis scripts in this study. A follow-up sampling run
+appended extra samples to the same result files, silently mixing #censeditunf#[-row] and
+#censbasefil#[-row] problem sets inside a per-problem mean; we describe the recomputation
+discipline that caught it each time.
 ]
 
 = Introduction
@@ -255,10 +255,10 @@ thinking tokens fall from 2,086.2 to 1,833.4 and the accuracy gain rises from +6
 pts. The effect scales with the edit magnitude in the expected direction, satisfying the
 pre-registered dose-response requirement.
 
-= Integrity and measurement failures
+= Integrity and measurement
 
-We report three failures, because each is a way this kind of study can produce a wrong number
-that survives review.
+We report three episodes, because each is a way this kind of study can produce a wrong number
+that survives review. Two are defects we found and fixed; the third is a check still running.
 
 == A follow-up run contaminated three analysis scripts
 
@@ -281,12 +281,22 @@ Every number in this paper is computed by a single committed script that applies
 filter once and publishes a per-arm census alongside its output; the census for this paper's
 inputs is #censbasefil rows per arm with uniform two-sample coverage.
 
-== A robustness check with coverage too poor to report
+== The 128k robustness check, in progress
 
-The pre-registered plan included re-running every sample that hit the 32k cap at a 128k cap,
-for all arms with the same seeds, as a robustness check on truncation. That run reached 3 of
-35 samples before its host ran out of memory. We report the coverage and decline to report a
-result from it. It was never part of the success criterion.
+The pre-registered plan included re-running every sample that hit the 32k cap at a
+#r128cap#[-token] cap, same seeds, to bound how much of the token reduction is truncation
+rather than brevity. It was never part of the success criterion.
+
+A first attempt exhausted host memory after three samples. The cause was arithmetic in the
+harness, not the hardware: the cap was multiplied by the parallelism, so a
+three-way run requested roughly 400k tokens of KV cache on top of a 26.6 GB model. Run
+sequentially at the same cap, the memory is stable and the run is proceeding.
+
+Coverage at the time of writing is #r128done of #r128plan sample-pairs across #r128ids
+problems, #r128tok tokens generated, #r128status. We report the coverage and no result. The
+figures above are read from the run's output by a committed script, so this paragraph states
+what has been measured, not what we expect; a later revision will carry a result or a
+reason there is none.
 
 == What a stale baseline looks like
 
@@ -298,7 +308,7 @@ travels by transcription is a standing hazard in exactly this kind of comparison
 
 = Discussion
 
-The honest summary is narrow and worth stating precisely. Nine rank-one updates, derived from
+The result is narrow. Nine rank-one updates, derived from
 a few hundred forward passes on a train split and costing no gradient steps, make a 27B
 reasoning model measurably better on two of three held-out benchmarks and substantially
 cheaper on all three. An identical-magnitude random perturbation of the same matrices does
@@ -329,7 +339,7 @@ estimates are coarse.
 All arms are Q8_0 quantized. We have not evaluated the edit at BF16, FP8 or NVFP4, so the
 interaction between this edit and quantization is unknown. The 32k cap is well below the
 262k the model card recommends for reasoning, chosen for throughput; truncation remains
-present in every arm, and the robustness check meant to bound its effect failed on coverage.
+present in every arm, and the check meant to bound its effect is still running.
 
 The control is one random direction per layer at one magnitude. A stronger design would sweep
 several random seeds per layer and report the distribution of control outcomes, which would
@@ -337,8 +347,8 @@ convert "the control does nothing" from three point estimates into an interval. 
 what we ran.
 
 The IFBench control clause is borderline, as described above, and the resolution of one
-criterion clause — whether "beats the control" inherits the criterion's own two-clause
-definition of beating — was a judgement we made explicit rather than a measurement. Under the
+criterion clause was a judgement we made explicit rather than a measurement: whether "beats
+the control" inherits the criterion's own two-clause definition of beating. Under the
 stricter reading the IFBench control comparison fails and the conclusion rests on the other
 two benchmarks, which is where we have put it regardless.
 

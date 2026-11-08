@@ -439,6 +439,16 @@
     1
   ],
   "provenance": {},
+  "robustness_128k": {
+    "cap": 131072,
+    "complete": false,
+    "ids_planned": 24,
+    "pairs_done": 5,
+    "pairs_placeholder": 11,
+    "pairs_planned": 48,
+    "status": "in progress",
+    "tokens_generated": 191055
+  },
   "seed_stability": {
     "gpqa_ctrl_to_edit_lower_bound_stable": true,
     "ifbench_ctrl_to_edit_lower_bound_range": [
@@ -450,5 +460,5 @@
     "lcb_ctrl_to_edit_lower_bound_stable": true,
     "note": "IFBench control->edit accuracy CI lower bound is seed-sensitive; lands on +0.00 for 2 of 10 seeds. Reported as borderline, not claimed. GPQA and LCB control margins are seed-stable above 0."
   },
-  "token_ci_method": "Paired bootstrap of per-problem differences over a fixed baseline mean, matching scripts/paired.py (the method behind every published token figure)."
+  "token_ci_method": "Paired bootstrap of per-problem differences over a fixed baseline mean, matching scripts/paired.py on spark2 (the method behind every published token figure)."
 }

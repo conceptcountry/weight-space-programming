@@ -67,6 +67,18 @@ for arm, key in (("base", "base"), ("Bcc_0.1", "edit"), ("Rcc_0.1", "ctrl")):
     s(f"cens{key}fil", c["rows_filtered"])
 L.append("")
 
+# Robustness: the 128k re-run's live coverage, measured not remembered.
+rb = RES.get("robustness_128k")
+if rb:
+    L.append("// --- 128k robustness run (live coverage) ---")
+    s("r128cap", f'{rb["cap"]:,}')
+    s("r128done", rb["pairs_done"])
+    s("r128plan", rb["pairs_planned"])
+    s("r128ids", rb["ids_planned"])
+    s("r128tok", f'{rb["tokens_generated"]:,}')
+    s("r128status", rb["status"])
+    L.append("")
+
 with open(OUT, "w") as f:
     f.write("\n".join(L) + "\n")
 
