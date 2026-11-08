@@ -117,7 +117,7 @@ comparison that separates a direction's content from a perturbation's size.
 == Model and engine
 
 The subject is Qwen3.8-27B in thinking mode. All arms run on the same inference server,
-Actual Computer (#link("https://actual.inc")[actual.inc], llama.cpp lineage), with Q8_0 GGUF
+Actual Computer (#link("https://actual.inc")[actual.inc]), with Q8_0 GGUF
 weights and the stock multi-token-prediction
 draft, on one GB10 accelerator. Sampling follows the model card for thinking mode
 (T\=1.0, top-p 0.95, top-k 20, presence 0, repetition 1.0) with a 32,768-token cap, and the
