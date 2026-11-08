@@ -1,6 +1,6 @@
 #import "numbers.typ": *
 
-#set document(title: "Gradient-Free Weight Editing Reduces Overthinking in Qwen3.8-27B", author: "Justin Bennington")
+#set document(title: "Gradient-Free Weight Editing Reduces Overthinking in Qwen3.8-27B", author: ("Justin Bennington", "Nikki Kaelar", "Spencer Lee"))
 #set page(paper: "us-letter", margin: (x: 1in, y: 0.9in), numbering: "1",
   header: context { if counter(page).get().first() > 1 [#set text(8pt, fill: luma(110)); Bennington · Gradient-Free Weight Editing in Qwen3.8-27B · Working paper v1 #h(1fr) Concept Country] })
 #set text(font: ("Libertinus Serif", "New Computer Modern"), size: 10.5pt, lang: "en")
@@ -22,8 +22,8 @@
   #v(0.15em)
   #text(11pt)[A norm-matched controlled replication of weight-space programming]
   #v(0.6em)
-  Justin Bennington \
-  #text(9.5pt)[Concept Country, New York, NY · \@somewheresy · Working paper v1, 8 November 2026]
+  Justin Bennington · Nikki Kaelar · Spencer Lee \
+  #text(9.5pt)[Concept Country, New York, NY · Working paper v1, 8 November 2026]
 ]
 
 #v(0.6em)
@@ -364,5 +364,5 @@ conveniences for deployment, not separately evaluated artifacts: every number re
 is from bf16 weights served at Q8_0, and no claim is made that a 4-bit conversion preserves
 the effect. The model is experimental and under evaluation.
 
-*Acknowledgements.* The replication was proposed by the author. The analysis, figures and
-text are the author's, carried out with an AI coding agent under his direction.
+*Acknowledgements.* The replication was proposed by the first author. The analysis, figures
+and text are the authors', carried out with an AI coding agent under their direction.
